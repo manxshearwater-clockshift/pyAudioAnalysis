@@ -206,6 +206,7 @@ def featureAndTrain(listOfDirs, mtWin, mtStep, stWin, stStep, classifierType, mo
             return
 
     # STEP B: Classifier Evaluation and Parameter Selection:
+    classifierParams = numpy.array([0.001, 0.01,  0.5, 1.0, 5.0, 10.0])
     if classifierType == "svm":
         classifierParams = numpy.array([0.001, 0.01,  0.5, 1.0, 5.0, 10.0])
     elif classifierType == "knn":
