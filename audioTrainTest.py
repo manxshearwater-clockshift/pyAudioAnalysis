@@ -448,6 +448,7 @@ def evaluateClassifier(features, ClassNames, nExp, ClassifierName, Params, param
                     # split features:
                     featuresTrain, featuresTest = randSplitFeatures(featuresNorm, perTrain)
                     # train multi-class svms:
+                    Classifier = trainSVM(featuresTrain, C)
                     if ClassifierName == "svm":
                         Classifier = trainSVM(featuresTrain, C)
                     elif ClassifierName == "knn":
