@@ -206,7 +206,7 @@ def featureAndTrain(listOfDirs, mtWin, mtStep, stWin, stStep, classifierType, mo
             return
 
     # STEP B: Classifier Evaluation and Parameter Selection:
-    classifierParams = numpy.array([0.001, 0.01,  0.5, 1.0, 5.0, 10.0])
+    classifierParams = None
     if classifierType == "svm":
         classifierParams = numpy.array([0.001, 0.01,  0.5, 1.0, 5.0, 10.0])
     elif classifierType == "knn":
@@ -448,7 +448,7 @@ def evaluateClassifier(features, ClassNames, nExp, ClassifierName, Params, param
                     # split features:
                     featuresTrain, featuresTest = randSplitFeatures(featuresNorm, perTrain)
                     # train multi-class svms:
-                    Classifier = trainSVM(featuresTrain, C)
+                    Classifier = None
                     if ClassifierName == "svm":
                         Classifier = trainSVM(featuresTrain, C)
                     elif ClassifierName == "knn":
